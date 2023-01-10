@@ -5,7 +5,14 @@
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "serverstart": "DEUB=instabook:* npm run devstart"
+    "serverstart": "DEUB=instabook:* npm run devstart",
+    "test": "jest --watch --verbose"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
