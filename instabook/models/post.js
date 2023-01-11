@@ -12,4 +12,8 @@ const PostSchema = new Schema({
     //image: {type: }
 })
 
+PostSchema.virtual("formatted_timestamp").get(function () {
+    return DateTime.formJSDate(this.timestamp).toFormat("MMMM d yyyy", " h:mm a")
+})
+
 module.exports = mongoose.model("Post", PostSchema)
