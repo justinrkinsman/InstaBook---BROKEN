@@ -1,0 +1,16 @@
+const { Int32 } = require('mongodb')
+const mongoose = require('mongoose')
+
+const Schema = mongoose.Schema
+
+const PostSchema = new Schema({
+    body: { type: String, required: true, minLength: 1},
+    author: { type: Schema.Types.ObjectId, ref: "User", required: true},
+    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment'}],
+    likes: {type: Number},
+    timestamp: {type: String, required: true},
+    db_timestamp: {type: Data, required: true},
+    //image: {type: }
+})
+
+module.exports = mongoose.model("Post", PostSchema)
