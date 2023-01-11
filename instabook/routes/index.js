@@ -16,4 +16,9 @@ router.get('/login', function(req, res, next) {
   res.render('login.pug', {title: "Login"})
 })
 
+/* GET sign up page */
+router.get('/signup', function(req, res, next) {
+  res.render('signup.pug', {title: "Sign Up"})
+})
+
 module.exports = router;
