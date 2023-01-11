@@ -8,9 +8,4 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'DIE!!!' });
 });
 
-/* GET test page */
-router.get('/test', function (req, res) {
-  res.render('test', {title: "Testin'" })
-})
-
 module.exports = router;

@@ -9,7 +9,7 @@ app.use('/', index)
 
 test('Index route works', done => {
     request(app)
-        .get('/test')
+        .get('/')
         .expect('Content-Type', 'text/html; charset=utf-8')
         .expect(200, done)
 })
