@@ -5,7 +5,7 @@ const fetch = (...args) =>
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'DIE!!!' });
+  res.render('index', { title: 'InstaBook' });
 });
 
 module.exports = router;
