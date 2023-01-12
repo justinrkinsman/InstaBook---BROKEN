@@ -108,7 +108,14 @@ app.post(
   })
 )
 
-//app.get('/logout')
+app.get('/logout', (req, res, next) => {
+  req.logout()
+  res.status(200).clearCookie('connect.sid', {
+    path: '/'
+  })
+  req.session = null
+  res.redirect('/login')
+})
 
 /* POST sign up page to create new user */
 app.post('/signup', [
