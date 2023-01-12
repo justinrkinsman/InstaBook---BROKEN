@@ -5,6 +5,7 @@ var express = require('express');
 const session = require('cookie-session')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
+const FacebookStrategy = require('passport-facebook')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
