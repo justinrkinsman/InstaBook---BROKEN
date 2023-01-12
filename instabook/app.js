@@ -95,7 +95,7 @@ app.use('/users', usersRouter);
 app.post(
   '/login', 
   passport.authenticate("local", {
-    successRedirect: '/success-login',
+    successRedirect: '/',
     failureRedirect: '/failed-login'
   })
 )
@@ -103,7 +103,7 @@ app.post(
 app.post(
   '/failed-login', 
   passport.authenticate("local", {
-    successRedirect: '/success-login',
+    successRedirect: '/',
     failureRedirect: '/failed-login'
   })
 )
