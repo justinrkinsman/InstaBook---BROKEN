@@ -21,8 +21,14 @@ router.get('/signup', function(req, res, next) {
   res.render('signup.pug', {title: "Sign Up"})
 })
 
+/* GET failed login page */
 router.get('/failed-login', function(req, res, next) {
   res.render('failure.pug', {title: 'Login Attempt Failed'})
+})
+
+/* POST send friend request*/
+router.get('/user/:id', (req, res, next) => {
+  
 })
 
 module.exports = router;
