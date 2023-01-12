@@ -9,6 +9,7 @@ const UserSchema = new Schema({
     password: { type: String, required: true, minLength: 8 },
     friends_list: { type: Schema.Types.ObjectId, ref: 'Friends_List' }
     //profile_pic: {type: }
+    //feed: [{type: }]
 })
 
 module.exports = mongoose.model("User", UserSchema)
