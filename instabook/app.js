@@ -22,7 +22,6 @@ var app = express();
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-const passport = require('passport');
 const dev_db_url = process.env.MONGO_URL
 const mongoDB = dev_db_url
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -93,6 +92,23 @@ app.use(bodyParser.json())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.post(
+  '/login', 
+  passport.authenticate("local", {
+    successRedirect: '/success-login',
+    failureRedirect: '/failed-login'
+  })
+)
+
+app.post(
+  '/failed-login', 
+  passport.authenticate("local", {
+    successRedirect: '/success-login',
+    failureRedirect: '/failed-login'
+  })
+)
+
+//app.get('/logout')
 
 /* POST sign up page to create new user */
 app.post('/signup', [

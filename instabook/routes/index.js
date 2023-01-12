@@ -21,4 +21,13 @@ router.get('/signup', function(req, res, next) {
   res.render('signup.pug', {title: "Sign Up"})
 })
 
+/* GET success login page */
+router.get('/success-login', function(req, res, next) {
+  res.render('success.pug', {title: 'Welcome'})
+})
+
+router.get('/failed-login', function(req, res, next) {
+  res.render('failure.pug', {title: 'Failyour'})
+})
+
 module.exports = router;
