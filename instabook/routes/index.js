@@ -25,6 +25,11 @@ router.get('/homepage', function(req, res, next) {
   res.render('index.pug', {title: "InstaBook", user: req.user.first_name})
 });
 
+/* GET new post page */
+router.get('/new-post', function(req, res, next) {
+  res.render('new-post.pug', {title: "New Post"})
+})
+
 /* GET login page. */
 router.get('/login', function(req, res, next) {
   res.render('login.pug', {title: "Login"})
