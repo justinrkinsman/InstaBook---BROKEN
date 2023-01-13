@@ -7,7 +7,11 @@ const UserSchema = new Schema({
     first_name: { type: String, required: true, minLength: 1 },
     last_name: { type: String, required: true, minLength: 1 },
     password: { type: String, required: true, minLength: 8 },
-    friends_list: [{ type: String, required: true }]
+    friends_list: { 
+        current_friends: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+        sent_requests: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+        received_requests: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    }
     //profile_pic: {type: }
     //feed: [{type: }]
 })
