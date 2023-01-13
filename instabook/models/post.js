@@ -9,7 +9,7 @@ const PostSchema = new Schema({
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     likes: { type: Number },
     timestamp: { type: String, required: true },
-    db_timestamp: { type: Data, required: true }
+    db_timestamp: { type: Date, required: true }
     //image: {type: }
 })
 
