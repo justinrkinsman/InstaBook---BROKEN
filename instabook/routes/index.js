@@ -5,10 +5,24 @@ const fetch = (...args) =>
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  return res.redirect('/homepage')
+})
+
+router.get('/homepage', function(req, res, next) {
   if (!req.user) {
     res.redirect('/login')
   }
-  res.render('index.pug', { title: 'InstaBook' });
+  /*const requestUrl = `http://localhost:3000/api/homepage`
+  fetch(requestUrl)
+  .then(response => response.json())
+  .then(data => {
+    if (!req.user) {
+      return res.render('index.pug', { title: "InstaBook", posts: data, user: null })
+    }else{
+      return res.render('index.pug', { title: "InstaBook", posts: data, user: req.user.username });
+    }
+  })*/
+  res.render('index.pug', {title: "InstaBook", user: req.user.first_name})
 });
 
 /* GET login page. */
@@ -26,9 +40,9 @@ router.get('/failed-login', function(req, res, next) {
   res.render('failure.pug', {title: 'Login Attempt Failed'})
 })
 
+
+
 /* POST send friend request*/
-router.get('/user/:id', (req, res, next) => {
-  
-})
+
 
 module.exports = router;
