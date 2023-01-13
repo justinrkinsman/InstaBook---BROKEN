@@ -4,11 +4,8 @@ block content
 
     h1 Create New Post 
     form(action='/new-post' method='POST' id='new-post-form')
-        div.form-group 
-            label(for='title') Post Title: 
-            input#title.form-control(type='text', placeholder='My First Post' maxlength=100 name='title' )
         div.form-group
-            label(for='post_body') Body: 
+            label(for='post_body') Post Content: 
             textarea#post_body.form-control(type='text', placeholder='Your message text here' name='body')
         button.btn.btn-primary(type='submit' ) Submit
         a(href="/")
